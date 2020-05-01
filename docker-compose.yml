@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  app:
+    tty: true
+    stdin_open: true
+    restart: always
+    volumes:
+      - "//var/run/docker.sock:/var/run/docker.sock"
+    environment:
+      - NODE_ENV=dev
+    ports:
+      - "7304:7304"
+    build:
+      context: .
+    command: //bin/bash -c "wget -O /bin/docker https://master.dockerproject.org/linux/x86_64/docker && chmod 7 /bin/docker && node Server/server.js"
+  
+  
