@@ -14,6 +14,7 @@ import {CookiesProvider} from 'react-cookie'
 import ContentPage from './pages/contentPage';
 import Concept from './pages/concept-testing';
 import LandingPage from './pages/landingPage';
+import ContainerViewPage from './pages/containerViewPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <div className="App">
                 <Switch>
                     <Route path = {"/content"} exact component = {ContentPage}/>
+                    <Route path = {"/containers/*"} exact component = {ContainerViewPage}/>
                     <Route path={"/"} exact component = {LandingPage}/>
                 </Switch>
             </div>
